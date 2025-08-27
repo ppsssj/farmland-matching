@@ -1,0 +1,13 @@
+app.js에서 라우트 : intropage, YoungMain, SeniorMain, senior/register(어르신 농지 등록), senior/lands(어르신 농지 목록)
+
+IntroPage(src/pages/Intro/IntroPage) 에서 버튼을 통해 청년Page(YoungMain)와 어르신 Page(SeniorMain)로 네비게이트
+
+
+청년Page(src/pages/Young/MainPage) 에서 각각의 패널(src/components/Pannel/패널명), 지도(src/components/Map/MapView) 출력
+지도 관련 훅(src/components/Hooks/useMakerManager.js) : 특정 농지 클릭 시 마커 업데이트 및 left,right패널에게 해당 농지 정보 출력 신호) 
+좌측 우측 패널 정보 출력 : farmland.js(src/api)에서 데이터 받아옴
+설정창(src/components/Setting/SettingModal)에서 좌측Sidebar출력, 우측에서 각종 설정콘첸츠 출력(src/components/Setting/SettingContent/설정콘텐츠)
+
+
+어르신Page(src/pages/Senior/SeniorMain) 에서 농지 등록(src/components/SeniorFlow/FarmlandRegistration/SeniorFlow)네비게이트 해당 flow단계 별로 return
+농지 목록 (src/components/SeniorFlow/FarmlandList/MyRegisteredLand) 네비게이트 

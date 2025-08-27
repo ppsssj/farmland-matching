@@ -1,0 +1,59 @@
+# 0) 키/경로 확인(둘 다 True여야 함)
+Test-Path "C:\Users\ppssj\Documents\H_KEY.pem"
+Test-Path "C:\Users\ppssj\Documents\해커톤\FE\my-app\package.json"
+
+# 1) 빌드
+cd "C:\Users\ppssj\Documents\해커톤\FE\my-app"
+npm run build
+Test-Path ".\build\index.html"   # True
+
+# 2) 업로드(내용물만; 한 줄로!)
+scp -i "C:\Users\ppssj\Documents\H_KEY.pem" -r ".\build\*" ec2-user@43.203.207.57:/opt/hackathon/fe-build/
+업로드에서 권한 에러 나면(드물지만) 임시폴더 경유:
+scp -i "C:\Users\ppssj\Documents\H_KEY.pem" -r ".\build\*" ec2-user@43.203.207.57:/home/ec2-user/fe-upload/
+EC2에서:
+mkdir -p ~/fe-upload
+sudo rm -rf /opt/hackathon/fe-build && sudo mkdir -p /opt/hackathon/fe-build
+sudo cp -r ~/fe-upload/* /opt/hackathon/fe-build/
+
+EC2에서 마무리
+# 3) 권한(디렉터리 통과권한 + 파일 읽기)
+sudo chmod -R a+rX /opt/hackathon/fe-build
+
+# 4) Nginx 재기동
+cd /opt/hackathon
+sudo docker compose rm -sf nginx
+sudo docker compose up -d --force-recreate --no-deps nginx
+
+# 5) 빠른 점검
+sudo docker compose exec nginx sh -lc '
+  ls -al /usr/share/nginx/html | sed -n "1,60p";
+  echo "---- static/js ----";
+  ls -al /usr/share/nginx/html/static/js | sed -n "1,20p"
+'
+curl -I http://localhost/
+# index.html에 적힌 실제 js 경로 하나 뽑기 → 그걸로 HEAD
+sudo docker compose exec nginx sh -lc "grep -o 'static/js/[^\" ]*' /usr/share/nginx/html/index.html | head -n 1"
+curl -I http://localhost/<위에서_찾은_js_경로>
+
+
+자주 터지는 증상 → 즉시 처방
+
+/ 에 500
+→ /usr/share/nginx/html에 파일 없음. 업로드 다시.
+
+/static/js/main.*.js 요청이 text/html 이거나 404
+→ 권한 문제(drwx------) 또는 파일 누락.
+→ sudo chmod -R a+rX /opt/hackathon/fe-build 후 재기동.
+
+하얀 화면(콘솔 에러)
+→ JS 로드 실패/런타임 에러.
+→ 위 “HEAD js”로 200/application/javascript 인지 확인.
+→ homepage 잘못 설정(빌드 경로 꼬임) 시 package.json의 "homepage" 제거하고 다시 빌드.
+→ Kakao SDK/전역 변수 접근은 window.kakao?.maps 가드.
+
+/api가 404/경로 짤림
+→ proxy_pass 끝에 슬래시 붙어있음. 슬래시 제거.
+
+캐시 잔상
+→ 브라우저 강력 새로고침(Ctrl+F5), CloudFront/프록시 없으니 보통 이걸로 해결.

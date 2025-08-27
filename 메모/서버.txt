@@ -1,0 +1,15 @@
+ssh -i "C:\Users\ppssj\Documents\H_KEY.pem" ec2-user@43.203.207.57
+
+
+서버에서 FE 소스 최신화
+
+cd /opt/hackathon/fe-src
+git pull
+
+
+빌드 & 배포 반영
+
+npm run build
+sudo rm -rf /opt/hackathon/fe-build/*
+sudo cp -r build/* /opt/hackathon/fe-build/
+sudo docker restart hackathon-nginx
