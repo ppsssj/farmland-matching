@@ -1,0 +1,31 @@
+/* src/components/SeniorFlow/FarmlandRegistration/FarmlandRegistration.css */
+.FarmlandRegistration-Step {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.FarmlandRegistration-InputField {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.FarmlandRegistration-Hint {
+  font-size: 13px;
+  color: #555;
+}
+.FarmlandRegistration-Nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.btn.primary {
+  background: #1976d2;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+.btn.secondary {
+  background: #eee;
+  padding: 6px 12px;
+  border-radius: 6px;
+}

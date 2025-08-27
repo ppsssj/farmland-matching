@@ -1,0 +1,85 @@
+/* SettingModal.css */
+
+.SettingModal-ModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 9998;
+}
+
+.SettingModal-SettingsContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  height: 90vh;
+  background: white;
+  border-radius: 1vw;
+  box-shadow: 0 0.8vw 2vw rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  display: flex;
+  overflow: hidden;
+}
+
+.SettingModal-CloseButton {
+  position: absolute;
+  top: 1vw;
+  right: 1vw;
+  background: none;
+  border: none;
+  font-size: 0.8vw;
+  color: #666;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.SettingModal-MainSettingsArea {
+  flex: 1;
+  padding: 1.8vw;
+  overflow-y: auto;
+  font-size: 0.9vw;
+}
+
+.SettingModal-SettingsSectionTitle {
+  font-size: 1vw;
+  font-weight: bold;
+  padding-bottom: 0.5vw;
+  margin-bottom: 1.0vw;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+}
+
+.SettingModal-SettingsTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6vw;
+  margin-bottom: 0.8vw;
+}
+
+.SettingModal-TabButton {
+  padding: 0.6vw 1.2vw;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 0.5vw;
+  font-weight: 500;
+  font-size: 0.9vw;
+  cursor: pointer;
+  color: #444;
+  transition: all 0.2s ease;
+}
+
+.SettingModal-TabButton:hover {
+  background-color: #eaeaea;
+}
+
+.SettingModal-TabButton.active {
+  background-color: #4756ff;
+  color: white;
+  border-color: #4756ff;
+  font-weight: 600;
+  box-shadow: 0 0.2vw 0.4vw rgba(0, 0, 0, 0.1);
+}

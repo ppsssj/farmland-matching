@@ -1,0 +1,175 @@
+.Sell-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  height: 70vh;
+  padding: 1% 2%;
+  box-sizing: border-box;
+  margin-top: 0.5%;
+}
+
+.Sell-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 3%; /* 기존 5% → 줄임 */
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 96%;
+  height: 100%;
+  padding-bottom: 0.4em; /* 기존 0.5em → 줄임 */
+}
+
+.Sell-card {
+  background-color: #ffffff;
+  border-radius: 0.8rem;
+  padding: 0.8rem; /* 기존 1.2rem → 줄임 */
+  flex: 0 0 47%;
+  width: 47%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem; /* 기존 1rem → 줄임 */
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.Sell-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.Sell-farm-image {
+  width: 100%;
+  height: 150px; /* 기존 180px → 줄임 */
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.Sell-info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /* 기존 0.4rem → 줄임 */
+}
+
+.Sell-info-row label {
+  font-weight: 600;
+  font-size: 0.8rem; /* 기존 0.85rem → 줄임 */
+  color: #555;
+}
+
+.Sell-info-row span {
+  font-size: 0.85rem; /* 기존 0.95rem → 줄임 */
+  padding: 0.4rem; /* 기존 0.6rem → 줄임 */
+  background-color: #f5f7fa;
+  border-radius: 0.4rem;
+  border: 1px solid #e3e6ea;
+}
+
+.Sell-info-row.wide {
+  gap: 0.5%; /* 기존 1% → 줄임 */
+}
+
+.Sell-info-row.horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.5rem; /* 기존 0.8rem → 줄임 */
+}
+
+.Sell-info-row.horizontal > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4%; /* 기존 5% → 줄임 */
+  width: 48%;
+}
+
+.Sell-info-row.horizontal label {
+  min-width: 30%;
+}
+
+.Sell-info-row.horizontal span {
+  width: 70%;
+}
+
+.Sell-btn-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 1%; /* 기존 2% → 줄임 */
+  margin-top: 2%; /* 기존 3% → 줄임 */
+}
+
+.Sell-btn {
+  flex: 1;
+  padding: 1.8% 0; /* 기존 2.5% → 줄임 */
+  border: none;
+  border-radius: 0.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.85rem; /* 기존 0.9rem → 줄임 */
+  box-sizing: border-box;
+}
+
+.Sell-btn.match {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.Sell-btn.detail {
+  background-color: #facc15;
+  color: black;
+}
+
+.Sell-btn.reject {
+  background-color: #ef4444;
+  color: white;
+}
+
+.Sell-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%; /* 기존 10% → 줄임 */
+  margin-top: 1.5%; /* 기존 2% → 줄임 */
+  font-size: 0.95rem; /* 기존 1rem → 살짝 줄임 */
+  font-weight: bold;
+  color: #333;
+}
+
+.Sell-controls button {
+  background: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 2rem; /* 기존 2.2rem → 줄임 */
+  height: 2rem; /* 기존 2.2rem → 줄임 */
+  font-size: 1.1rem; /* 기존 1.2rem → 줄임 */
+  cursor: pointer;
+}
+
+.Sell-controls button:disabled {
+  color: #aaa;
+  border-color: #eee;
+  cursor: not-allowed;
+}
+
+.Sell-controls span {
+  white-space: nowrap;
+}
+
+/* 채팅 버튼 상태 */
+.Sell-btn.chat.on {
+  background: #0ea5e9;
+  color: #fff;
+  border: none;
+}
+
+.Sell-btn.chat.off {
+  background: #e5e7eb;
+  color: #9ca3af;
+  border: 1px solid #e5e7eb;
+  cursor: not-allowed;
+  opacity: 0.7;
+}

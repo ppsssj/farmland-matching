@@ -1,0 +1,12 @@
+spring:
+  config:
+    import: application-secret.yml  # 로컬에만 존재
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/${db.name}
+    username: ${db.username}
+    password: ${db.password}
+
+# 로컬에서 AI 서버가 로컬(127.0.0.1:8000)이면 이렇게 덮어써도 됩니다.
+ai:
+  base-url: http://127.0.0.1:8000

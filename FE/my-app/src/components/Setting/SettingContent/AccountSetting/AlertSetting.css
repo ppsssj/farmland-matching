@@ -1,0 +1,84 @@
+.AlertSetting-container.full-width {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0% 1%;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+  color: #333;
+}
+
+.AlertSetting-section-title {
+  font-size: 1.1rem; /* 약 17.6px */
+  font-weight: 600;
+  margin: 0.5rem 0 1rem;
+}
+
+.AlertSetting-alert-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 1.2rem 0;
+  gap: 3%;
+  flex-wrap: wrap;
+}
+
+.AlertSetting-toggle-group {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.AlertSetting-btn {
+  border: none;
+  border-radius: 2rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+
+.AlertSetting-btn.on {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.AlertSetting-btn.off {
+  background-color: #e5e7eb;
+  color: #333;
+}
+
+.AlertSetting-btn.red {
+  background-color: #ef4444;
+  color: white;
+}
+
+.AlertSetting-alert-text {
+  flex: 1 1 60%;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.AlertSetting-receive-methods {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.AlertSetting-method {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.AlertSetting-error-messages {
+  margin-top: 1.5rem;
+  color: rgb(33, 156, 33);
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.6;
+}

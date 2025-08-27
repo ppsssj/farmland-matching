@@ -1,0 +1,56 @@
+.Sidebar {
+  padding: 1vw;
+  width: 15vw; /* 기존 360px → 반응형 */
+  border-right: 0.1vw solid #2632b6;
+  background-color: #2632b6;
+  height : 100vh;
+}
+
+.SidebarSearch {
+  width: 90%;
+  padding: 0.6vw 0.8vw;
+
+  margin-bottom: 0.2vw;
+  border: 0.1vw solid #ccc;
+  border-radius: 0.5vw;
+  font-size: 0.8vw;
+}
+
+.SidebarSectionTitle {
+  font-size: 0.7vw;
+  font-weight: bold;
+  color: #bababa;
+  margin-bottom: 0.3vw;
+  margin-top: 1vw;
+  padding-left: 0.3vw;
+}
+
+.SidebarSection {
+  color: #fff;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.SidebarItem {
+  padding: 0.6vw 0.8vw;
+  cursor: pointer;
+  border-radius: 0.4vw;
+  font-size: 0.8vw;
+  transition: background-color 0.2s ease;
+}
+
+.SidebarItem:hover {
+  background-color: #4c55b7;
+}
+
+.SidebarItem.active {
+  background-color: #1d2368;
+  font-weight: 600;
+}
+
+.SidebarDivider {
+  margin: 1vw 0;
+  border: none;
+  border-top: 0.1vw solid #ddd;
+}

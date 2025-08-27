@@ -1,0 +1,160 @@
+.Star-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  height: 70vh;
+  padding: 1% 2%;
+  box-sizing: border-box;
+  margin-top: 0.5%;
+}
+
+.Star-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 5%;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 96%;
+  height: 100%;
+  padding-bottom:0.5em;
+}
+
+.Star-card {
+  background-color: #ffffff; /* 더 깔끔한 흰색 배경 */
+  border-radius: 0.8rem;
+  padding: 1.2rem;
+  flex: 0 0 47%;
+  width: 47%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* 부드러운 그림자 */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* 요소 간격 넓힘 */
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.Star-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); /* hover 시 살짝 띄움 */
+}
+
+.Star-farm-image {
+  width: 100%;
+  height: 180px; /* 일정한 높이 */
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.Star-info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.Star-info-row label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.Star-info-row span {
+  font-size: 0.95rem;
+  padding: 0.6rem;
+  background-color: #f5f7fa;
+  border-radius: 0.4rem;
+  border: 1px solid #e3e6ea;
+}
+
+.Star-info-row.wide {
+  gap: 1%;
+}
+
+.Star-info-row.horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.Star-info-row.horizontal > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5%;
+  width: 48%;
+}
+
+.Star-info-row.horizontal label {
+  min-width: 30%;
+}
+
+.Star-info-row.horizontal span {
+  width: 70%;
+}
+
+.Star-btn-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 2%;
+  margin-top: 3%;
+}
+
+.Star-btn {
+  flex: 1;
+  padding: 2.5% 0;
+  border: none;
+  border-radius: 0.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.Star-btn.match {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.Star-btn.detail {
+  background-color: #facc15;
+  color: black;
+}
+
+.Star-btn.reject {
+  background-color: #ef4444;
+  color: white;
+}
+
+.Star-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+  margin-top: 2%;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.Star-controls button {
+  background: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.Star-controls button:disabled {
+  color: #aaa;
+  border-color: #eee;
+  cursor: not-allowed;
+}
+
+.Star-controls span {
+  white-space: nowrap; /* ✅ 1/10 줄바꿈 방지 */
+}

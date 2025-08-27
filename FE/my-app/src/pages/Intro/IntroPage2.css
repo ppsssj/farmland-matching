@@ -1,0 +1,310 @@
+/* 기본 레이아웃 */
+.Intro2Container {
+  background-color: #f4efe9;
+  padding: 0;
+  margin: 0;
+}
+
+.SectionBlock {
+  min-height: 100vh;
+  padding: 1vh 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(248, 243, 235, 0.5);
+}
+
+/* 헤더 영역 */
+.Intro2Header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+  margin-bottom: 9vh;
+  margin-top:-9vh;
+}
+
+.Intro2LogoImage {
+  width: 3vw;
+  height: auto;
+  min-width: 30px;
+}
+.Intro2Image {
+  width: 40%;
+  max-width: 400px;
+  border-radius: 1vw;
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+}
+
+.Intro2Content.reverse {
+  flex-direction: row-reverse;
+}
+
+.Intro2Title {
+  font-size: 1.6vw;
+  font-weight: bold;
+  line-height: 1.4;
+  text-align: center;
+  color: #333;
+  font-family: "SUIT", sans-serif;
+}
+
+/* 메인 콘텐츠 영역 */
+.Intro2Content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4vw;
+  background-color: #f8f3eb;
+  box-shadow: 0 0.8vw 2vw rgba(0, 0, 0, 0.08);
+  border-radius: 1vw; /* 그림자에 곡선 더하면 더 부드러움 */
+  padding: 2vw;        /* 안쪽 여백도 추가하면 그림자 깔끔 */
+}
+
+.Intro2Text {
+  width: 45%;
+  min-width: 300px;
+}
+
+
+.Intro2Video {
+  width: 45%;
+  min-width: 300px;
+  aspect-ratio: 16 / 9;
+  border-radius: 1vw;
+  overflow: hidden;
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+}
+
+.Intro2Text h1 {
+  font-size: 2.5vw;
+  font-weight: bold;
+}
+
+.blue {
+  color: #c58f4d;
+}
+
+.subtext {
+  font-size: 1.1vw;
+  margin-top: 1vw;
+}
+
+.Intro2start-button {
+  margin-top: 2vw;
+  margin-right: 1vw;
+  padding: 0.7vw 1.6vw;
+  font-size: 1vw;
+  background-color: #ecaf64;
+  color: white;
+  border: none;
+  border-radius: 0.5vw;
+  cursor: pointer;
+}
+
+.Intro2start-button:hover {
+  background-color: #c58f4d;
+}
+
+/* 기능 박스 */
+.KeyFeaturesBox2 {
+  padding: 3vw;
+  background-color: #f8f3eb;
+  border-radius: 1vw;
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.08);
+  max-width: 70vw;
+  margin: 3vh 0;
+}
+
+.FeatureTitle2 {
+  font-size: 1.4vw;
+  font-weight: 700;
+  border-bottom: 2px solid #cc9544;
+  margin-bottom: 2vh;
+  padding-bottom: 0.5vh;
+  text-align: center;
+}
+
+.FeatureHeader2 {
+  font-size: 1vw;
+  color: #888;
+  margin-bottom: 0.5vw;
+  text-align: center;
+}
+
+.FeatureGrid2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 👈 가로로 3개씩 */
+  gap: 1vw;
+  justify-items: center;
+  align-items: stretch;
+}
+
+
+.FeatureCard2 {
+  width : 80%;
+  Height : 80%;
+  background: white;
+  border-radius: 0.8vw;
+  padding: 1.2vw;
+  text-align: center;
+  box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.FeatureCard2:hover {
+  transform: translateY(-0.4vw);
+  box-shadow: 0 0.8vw 1.6vw rgba(0, 0, 0, 0.12);
+}
+
+.FeatureIcon2 {
+  width: 5vw;
+  height: 5vw;
+  margin-bottom: 0.6vw;
+}
+
+.FeatureContent2 {
+  font-size: 1vw;
+  font-weight: 600;
+  margin-bottom: 0.4vw;
+}
+
+.FeatureExplain2 {
+  font-size: 0.9vw;
+  color: #666;
+  line-height: 1.4;
+}
+
+.FeatureCard2_1 {
+  width: 100%;
+  min-height: 18vw;
+  padding: 1.5vw;
+  border-radius: 1vw;
+  background: linear-gradient(to bottom right, #ffffff, #f9f6f1);
+  box-shadow: 0 0.6vw 1.2vw rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.FeatureCard2_1:hover {
+  transform: translateY(-0.5vw);
+  box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.15);
+}
+
+.FeatureIcon2_1 {
+  width: 20vw;
+  height: 20vw;
+  margin-bottom: 1vw;
+
+  transition: transform 0.4s ease;
+}
+
+.FeatureCard2_1:hover .FeatureIcon2_1 {
+  transform: rotate(6deg) scale(1.05);
+}
+.FeatureContent2_1 {
+  font-size: 1.2vw;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5vw;
+  border-bottom: 2px solid #cc9544;
+  padding-bottom: 0.5vw;
+  width: 100%;
+}
+.FeatureExplain2_1 {
+  font-size: 1vw;
+  color: #666;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+.FeatureDetail2_1 {
+  margin-top: 1vw;
+  font-size: 0.95vw;
+  color: #999;
+  line-height: 1.6;
+  max-width: 90%;
+  text-align: center;
+}
+
+/* 카드 확장 기본 스타일 */
+.hover-expand {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  min-height: 12vw; /* 기본 높이 */
+}
+
+/* 카드 내부 상세 설명 (초기 숨김) */
+.FeatureDetail2 {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  font-size: 0.95vw;
+  color: #444;
+  margin-top: 1vw;
+  transition: all 0.4s ease;
+}
+
+/* hover 시 카드 확장 */
+.hover-expand:hover {
+  min-height: 20vw; /* 아래로 확장 */
+  background-color: #fdfaf5; /* 부드러운 배경톤 */
+}
+
+/* hover 시 상세 내용 표시 */
+.hover-expand:hover .FeatureDetail2 {
+  max-height: 100vh;
+  opacity: 1;
+}
+
+/* 타이핑 커서 효과 */
+.typing::after {
+  content: "|";
+  animation: blink 1s step-start infinite;
+  margin-left: 4px;
+  font-weight: bold;
+  color: #3c67ff;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.dialect-buttons {
+  display: flex;
+  gap: 1vw;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dialect-buttons button {
+  background-color: #f8e8c0;
+  border: none;
+  border-radius: 0.5vw;
+  padding: 0.5vw 1.2vw;
+  font-size: 0.9vw;
+  margin-bottom: 2vw; 
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.dialect-buttons button:hover {
+  background-color: #eccb86;
+}
+
+.dialect-buttons .active-dialect {
+  background-color: #c58f4d;
+  color: white;
+  font-weight: bold;
+  transform: scale(1.05);
+  box-shadow: 0 0.2vw 0.6vw rgba(0, 0, 0, 0.1);
+}

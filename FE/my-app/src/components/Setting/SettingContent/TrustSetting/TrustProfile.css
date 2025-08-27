@@ -1,0 +1,226 @@
+/* src/components/Setting/SettingContent/TrustSetting/TrustProfile.css */
+
+/* 공통 컨테이너/헤더 */
+.TrustProfile-Container {
+  max-width: 980px;
+  margin: 2rem auto;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.TrustProfile-Header h2 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.TrustProfile-Header p {
+  margin: 0 0 0.25rem 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* 카드 */
+.TrustProfile-Card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  border: 1px solid #eee;
+}
+.TrustProfile-Card h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.15rem;
+}
+.TrustProfile-CardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  margin-bottom: 0.75rem;
+}
+.TrustProfile-Empty {
+  padding: 0.75rem 0.5rem;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* 가로 2열 그리드 */
+.TrustProfile-Grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+
+/* 행/그리드 (일반/awards) */
+.TrustProfile-RowGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 0.7rem;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+.TrustProfile-RowGrid.awards {
+  grid-template-columns: 1fr auto; /* title, 삭제버튼 */
+}
+
+/* 입력 공통 */
+.TrustProfile-Input,
+.TrustProfile-Textarea {
+  width: 100%;
+  padding: 0.78rem 1rem;
+  font-size: 0.95rem;
+  border: 1.5px solid #d6d6d6;
+  border-radius: 10px;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+  box-sizing: border-box;
+  background: #fafafa;
+}
+.TrustProfile-Input:focus,
+.TrustProfile-Textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,.15);
+  outline: none;
+  background: #fff;
+}
+.TrustProfile-Textarea { resize: vertical; }
+
+/* 태그 버튼(거래 형태) */
+.TrustProfile-TagContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.25rem 0 0.5rem;
+}
+.TrustProfile-TagButton {
+  background-color: #f1f3f5;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all .15s ease;
+}
+.TrustProfile-TagButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.TrustProfile-TagButton.selected {
+  background-color: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+/* 버튼 */
+.TrustProfile-AddButton {
+  padding: 0.45rem 0.9rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  transition: filter .15s ease;
+}
+.TrustProfile-AddButton:hover { filter: brightness(0.95); }
+.TrustProfile-DeleteButton {
+  background-color: #f3f4f6;
+  color: #333;
+  border: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  transition: background-color .15s ease;
+}
+.TrustProfile-DeleteButton:hover {
+  background-color: #ef4444;
+  color: white;
+}
+
+/* 하단 액션 */
+.TrustProfile-ActionRow {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+.TrustProfile-PrimaryButton {
+  padding: 0.7rem 1.2rem;
+  background-color: #111827;
+  color: #fff;
+  font-size: 0.98rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform .12s ease, filter .15s ease;
+}
+.TrustProfile-PrimaryButton:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+/* ✅ IntroForm-* 제거 → TrustProfile-* 로 통일 (행/레이블/카운터/래퍼) */
+.TrustProfile-IntroRoot { margin-top: 1rem; }
+.TrustProfile-IntroCard {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  border: 1px solid #eee;
+}
+.TrustProfile-Row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 0.8rem;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+.TrustProfile-Label {
+  color: #333;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.TrustProfile-InputWrap {
+  position: relative;
+}
+.TrustProfile-Counter {
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.55rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* ✅ 경험 토글 */
+.TrustProfile-ToggleWrap {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+}
+.TrustProfile-Toggle {
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  padding: .45rem .9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: .9rem;
+}
+.TrustProfile-Toggle.active {
+  background: #3b82f6;
+  color: #fff;
+  border-color: #3b82f6;
+}
+
+/* 유틸 */
+.TrustProfile-mt8 { margin-top: 0.6rem; }
+
+/* 반응형 */
+@media (max-width: 900px) {
+  .TrustProfile-Grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .TrustProfile-RowGrid { grid-template-columns: 1fr; }
+  .TrustProfile-RowGrid.awards { grid-template-columns: 1fr; }
+  .TrustProfile-Row { grid-template-columns: 1fr; }
+}

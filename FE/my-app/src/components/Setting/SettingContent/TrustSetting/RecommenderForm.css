@@ -1,0 +1,89 @@
+.RecommenderForm-container {
+  width: 90%;
+  max-width: 1000px;
+  padding: 3% 4%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.RecommenderForm-title {
+  font-size: 1.05rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+.RecommenderForm-description {
+  background-color: #f5f5f5;
+  border-left: 4px solid #6563d4;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.RecommenderForm-row {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr 1fr 1.2fr auto; /* name | relation | phone | mail | delete */
+  gap: 0.6rem;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.RecommenderForm-input {
+  padding: 0.45rem 0.7rem;
+  font-size: 0.9rem;
+  border: 1.5px solid #ccc;
+  border-radius: 0.5rem;
+  width: 100%;
+  min-width: 0; /* grid 안에서 overflow 방지 */
+  box-sizing: border-box;
+}
+
+.RecommenderForm-input.phone {
+  flex: 2 1 55%;
+}
+
+.RecommenderForm-remove-btn {
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 0.8rem;
+  color: white;
+  background-color: #ff4d4f;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  line-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.RecommenderForm-add-button-wrapper {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.RecommenderForm-add-btn {
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #3b82f6;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* 저장 버튼 보완 (선택 사항) */
+.RecommenderForm-actions .primary {
+  background-color: #111827;
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+.RecommenderForm-actions .primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

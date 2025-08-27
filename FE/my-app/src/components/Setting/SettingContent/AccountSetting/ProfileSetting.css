@@ -1,0 +1,195 @@
+.ProfileSettings-container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  box-sizing: border-box;
+}
+
+.ProfileSettings-top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5em;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.ProfileSettings-left-top-section {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.ProfileSettings-input-row.half-width {
+  flex: 1 1 calc(33.33% - 0.66em);
+  display: flex;
+  flex-direction: column;
+}
+
+.ProfileSettings-profile-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ProfileSettings-photo-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 4%;
+  object-fit: cover;
+  border: 1px solid  #ccc;
+}
+
+.ProfileSettings-left-section {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  box-sizing: border-box;
+}
+
+.ProfileSettings-input-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.ProfileSettings-input-row label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.ProfileSettings-input-row input,
+.ProfileSettings-input-row select,
+.ProfileSettings-input-row textarea {
+  font-size: 13px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 36px;
+  box-sizing: border-box;
+}
+
+.ProfileSettings-error-text {
+  font-size: 12px;
+  color: rgb(33, 156, 33);
+  margin-top: 4px;
+}
+
+.ProfileSettings-submit-button,
+.ProfileSettings-cancel-button {
+  margin-top: 1em;
+  align-self: flex-end;
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #3366ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.ProfileSettings-cancel-button{
+  background-color: rgb(231, 64, 64);
+}
+
+.ProfileSettings-submit-button:hover {
+  background-color: #254eda;
+}
+
+.ProfileSettings-cancel-button:hover{
+  background-color: rgb(202, 45, 45);
+}
+
+
+.ProfileSettings-certificate-buttons,
+.ProfileSettings-multi-select {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 0.5em;
+}
+
+.ProfileSettings-cert-button,
+.ProfileSettings-select-button {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.ProfileSettings-cert-button.selected,
+.ProfileSettings-select-button.selected {
+  background-color: #3366ff;
+  color: white;
+  border-color: #3366ff;
+}
+
+.ProfileSettings-custom-cert-input {
+  font-size: 13px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+.ProfileSettings-privacy {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 1em;
+  font-size: 0.875rem;
+  color: #333;
+}
+
+.ProfileSettings-privacy input[type="checkbox"] {
+  width: 1em;
+  height: 1em;
+  accent-color: #3366ff; /* 체크 색상 */
+  cursor: pointer;
+}
+
+.ProfileSettings-privacy label {
+  cursor: pointer;
+  user-select: none;
+}
+.ProfileSettings-agreements {
+  border-top: 1px solid #ccc;
+  margin-top: 1em;
+  padding-top: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+  font-size: 0.875rem;
+}
+
+.ProfileSettings-agreements input[type="checkbox"] {
+  width: 1em;
+  height: 1em;
+  accent-color: #3366ff;
+  cursor: pointer;
+}
+
+.ProfileSettings-agreements label {
+  cursor: pointer;
+}
+
+.ProfileSettings-agreements .agree-all {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.ProfileSettings-agreements .agree-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding-left: 1em;
+}

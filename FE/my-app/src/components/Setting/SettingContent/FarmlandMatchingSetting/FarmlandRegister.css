@@ -1,0 +1,100 @@
+.FarmlandResister-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+  padding: 1.5% 3%;
+  background: #fff;
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.FarmlandResister-form-section {
+  flex: 1 1 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.FarmlandResister-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1%;
+}
+
+/* input, select, textarea 공통 */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+}
+
+label {
+  font-size: 0.85rem;
+  word-break: keep-all;
+  white-space: normal;
+}
+
+/* 체크박스 */
+.FarmlandResister-checkbox-row {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.8rem;
+}
+
+.FarmlandResister-checkbox-row input[type="checkbox"] {
+  position: relative;
+  top: 0.2rem;
+}
+
+/* 지도 */
+.FarmlandResister-gray-map {
+  background-color: #ddd;
+  height: 10rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  line-height: 10rem;
+  color: #555;
+  margin-top: 0.6rem;
+}
+
+/* 이미지 업로드 영역 */
+.FarmlandResister-image-box {
+  background-color: #f9f9f9;
+  height: 9rem;
+  border: 1px dashed #bbb;
+  border-radius: 0.5rem;
+  text-align: center;
+  line-height: 9rem;
+  color: #999;
+}
+
+/* 제출 버튼 */
+.FarmlandResister-submit-btn {
+  margin-top: 1.2rem;
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* 수직 구분선 */
+.FarmlandResister-vertical-divider {
+  width: 1px;
+  background-color: #ccc;
+  margin: 0 1%;
+}

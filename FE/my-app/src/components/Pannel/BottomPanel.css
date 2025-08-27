@@ -1,0 +1,47 @@
+.BttomPanel-BottomContainer {
+  position: absolute;
+  bottom: 2%;
+  left: 2%;
+  right: 2%;
+  height: 7%;
+  background-color: transparent;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+}
+
+.BttomPanel-BottomPanel {
+  background-color: rgba(71, 86, 255, 0.8);
+  padding: 0.5vw 1vw;
+  border-radius: 0.8vw;
+  display: flex;
+  gap: 0.6vw;
+  box-shadow: 0 0.3vw 0.8vw rgba(0, 0, 0, 0.15);
+}
+
+.BttomPanel-BottomItem {
+  background-color: white;
+  color: #333;
+  padding: 0.5vw 1vw;
+  border-radius: 0.6vw;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 500;
+  font-size: 0.75vw;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.BttomPanel-BottomItem:hover {
+  background-color: #e8f0ff;
+}
+
+.BttomPanel-BottomItem.active {
+  background-color: #4756ff;
+  color: white;
+  font-weight: bold;
+}

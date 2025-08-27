@@ -1,0 +1,218 @@
+/* 레이아웃 래퍼 */
+.MyRegisteredLand-Wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  background-color: #f9f6f1;
+  padding: 5rem 2rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* 좌측 목록 패널 */
+.MyRegisteredLand-LeftPanel {
+  flex: 1;
+  max-width: 420px;
+}
+
+/* 목록 카드 */
+.MyRegisteredLand-LandCard {
+  background-color: #f8f3eb;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+.MyRegisteredLand-LandTitle {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+}
+.MyRegisteredLand-LandDetails {
+  font-size: 16px;
+  color: #555;
+}
+.MyRegisteredLand-LandStatus {
+  margin-top: 0.5rem;
+  font-size: 16px;
+  color: #333;
+}
+
+/* 버튼 그룹 & 버튼 */
+.MyRegisteredLand-ButtonGroup {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+.MyRegisteredLand-Button {
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #5a914e;
+  color: white;
+  transition: background-color 0.2s ease;
+  user-select: none;
+}
+.MyRegisteredLand-Button:hover { background-color: #4b7e41; }
+.MyRegisteredLand-Button.danger { background-color: #c84646; }
+.MyRegisteredLand-Button.danger:hover { background-color: #a93838; }
+.MyRegisteredLand-Button.gray { background-color: #999; }
+.MyRegisteredLand-Button.gray:hover { background-color: #777; }
+.MyRegisteredLand-Button.accept { background: #10b981; color: #fff; }
+.MyRegisteredLand-Button.reject { background: #ef4444; color: #fff; }
+.MyRegisteredLand-RightTitle { margin-top: 0.3rem; margin-bottom: 0.75rem; }
+/* 우측 상세 패널 */
+.MyRegisteredLand-DetailPanel {
+  flex: 2;
+  background-color: #ffffff;
+  border-radius: 12px;
+
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  min-height: 300px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.MyRegisteredLand-EmptyDetail {
+  color: #999;
+  font-style: italic;
+}
+
+/* 입력 필드 */
+.MyRegisteredLand-Input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+/* 상단 홈 버튼 */
+.SeniorProfile-BackButton {
+  position: sticky;
+  top: 1rem;
+  margin-bottom: 1rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+.SeniorProfile-BackButton:hover { background: #f2f2f2; }
+
+/* 신청자 리스트 / 상세 */
+.MyRegisteredLand-Applicants { margin-top: 1rem; }
+.MyRegisteredLand-EmptyApplicants { color: #888; font-style: italic; }
+
+.MyRegisteredLand-ApplicantsLayout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0.8rem;
+}
+.MyRegisteredLand-ApplicantsList {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.6rem;
+  background: #fff;
+  padding: 0.6rem;
+  max-height: 320px;
+  overflow: auto;
+}
+.ApplicantItem {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.ApplicantItem:hover { background: #f7f7f7; }
+.ApplicantItem.active { background: #eef6ff; }
+
+.ApplicantNameRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ApplicantName { font-weight: 600; }
+.ApplicantMeta { color: #666; font-size: 0.9rem; margin-top: 0.15rem; }
+
+.ApplicantBadge {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  border-radius: 0.6em;
+  font-size: 0.85em;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* 매칭 대기중 → 노란색 */
+.ApplicantBadge.WAITING {
+  background-color: #f1c40f;
+  color: #fff;
+}
+
+/* 매칭 진행중 → 초록색 */
+.ApplicantBadge.IN_PROGRESS {
+  background-color: #27ae60;
+  color: #fff;
+}
+
+/* 매칭 거절됨 → 빨간색 */
+.ApplicantBadge.REJECTED {
+  background-color: #e74c3c;
+  color: #fff;
+}
+.MyRegisteredLand-ApplicantDetail {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.6rem;
+  background: #fff;
+  padding: 0.8rem;
+  min-height: 220px;
+}
+.ApplicantDetail-Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+.ApplicantDetail-Name { font-weight: 700; font-size: 1.05rem; }
+.ApplicantDetail-Body { display: grid; gap: 0.25rem; font-size: 0.95rem; }
+
+.ApplicantDetail-Tags {
+  margin-top: 0.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.Tag {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+}
+.Tag.yellow { background: #fffbeb; border-color: #fde68a; }
+.Tag.green { background: #ecfdf5; border-color: #a7f3d0; }
+.Tag.grey { background: #f3f4f6; border-color: #e5e7eb; }
+.mrl-detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.mrl-detail-row span:first-child {
+  font-weight: 600;
+  min-width: 120px; /* 라벨 고정 폭 */
+  margin-right: 8px;
+}
+
+.mrl-detail-row a {
+  color: #0077cc;
+  text-decoration: underline;
+  word-break: break-all; /* 긴 URL 줄바꿈 */
+}
+

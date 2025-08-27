@@ -1,0 +1,75 @@
+.senior-main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 4rem 2rem;
+  background-color: #f9f6f1;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: center;
+}
+
+.senior-main-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.senior-main-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.senior-main-button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+  align-items: center;
+}
+
+.senior-main-action-card {
+  background-color: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 2rem 2.5rem;
+  width: 100%;
+  max-width: 480px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.senior-main-action-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.senior-main-action-card-button {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.senior-main-action-card-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.senior-main-back-button {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  background-color: #fff;
+  color: #444;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  z-index: 10;
+}
+
+.senior-main-back-button:hover {
+  background-color: #f0f0f0;
+}

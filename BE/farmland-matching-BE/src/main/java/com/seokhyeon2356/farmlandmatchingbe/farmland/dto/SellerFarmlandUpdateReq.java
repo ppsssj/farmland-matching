@@ -1,0 +1,39 @@
+package com.seokhyeon2356.farmlandmatchingbe.farmland.dto;
+
+import org.springframework.web.multipart.MultipartFile;
+
+public record SellerFarmlandUpdateReq(
+        String landName,
+        String landAddress,
+        String landRoadAddress,
+        String landNumber,
+        Double landLat,
+        Double landLng,
+        String landCrop,
+        Integer landArea,
+        String soiltype,
+        String waterSource,
+        String ownerName,
+        Integer ownerAge,
+        String ownerAddress,
+        Boolean landWater,
+        Boolean landElec,
+        Boolean landMachine,
+        Boolean landStorage,
+        Boolean landHouse,
+        Boolean landFence,
+        Boolean landRoad,
+        Boolean landWellRoad,
+        Boolean landBus,
+        Boolean landCar,
+        String landTrade,
+        String landMatch,
+        Integer landPrice,
+        String landWhen,
+        String landWhy,
+        String landComent,
+        MultipartFile landImage,
+        MultipartFile landRegister,
+        MultipartFile landCadastre,
+        MultipartFile landCertification
+) {}

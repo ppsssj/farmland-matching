@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://db:5432/${DB_NAME:farmland}}
+    username: ${SPRING_DATASOURCE_USERNAME:${DB_USER}}
+    password: ${SPRING_DATASOURCE_PASSWORD:${DB_PASSWORD}}
+
+supabase:
+  url: ${SUPABASE_URL}
+  anon-key: ${SUPABASE_ANON_KEY:${SUPABASE_KEY}}
+  bucket: ${SUPABASE_BUCKET}
+
+management:
+  endpoints:
+    web:
+      base-path: /actuator      # 기본값이라 생략 가능, 명시해둠
+      exposure:
+        include: "health,info"  # health(필수), info(선택)
+  endpoint:
+    health:
+      show-details: never       # 필요시 when_authorized, always 등
+      probes:
+        enabled: true           # liveness/readiness 도 같이 켬(선택)

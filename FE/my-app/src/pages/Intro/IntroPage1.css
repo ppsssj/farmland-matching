@@ -1,0 +1,130 @@
+.intro-wrapper {
+  width: 100%;
+}
+
+.intro-section {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: white;
+}
+
+.hero {
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.hero button, .cta button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.hero button:hover, .cta button:hover {
+  background-color: #276c47;
+}
+
+.split {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.split.reverse {
+  flex-direction: row-reverse;
+}
+
+.intro-img {
+  width: 300px;
+  max-width: 80%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.intro-text {
+  max-width: 500px;
+  text-align: left;
+}
+
+.intro-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.intro-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* 슬라이더 섹션 */
+.slider-section {
+  background-color: #fafafa;
+}
+
+.slider-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.slider-container::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-card {
+  flex: 0 0 auto;
+  width: 250px;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slider-card:hover {
+  transform: scale(1.07);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.slider-card h3 {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.slider-card p {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  color: #555;
+}
+
+/* CTA 스타일 */
+.cta {
+  background-color: #f0f0f0;
+}

@@ -1,0 +1,186 @@
+.FarmlandDetailPanel-Container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  width: 70vw;             
+  max-height: 80vh;          
+  overflow-y: auto;
+}
+
+.FarmlandDetailPanel-CloseButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+.FarmlandDetailPanel-Container h2 {
+  margin-top: 0;
+  font-size: 26px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.FarmlandDetailPanel-Container section {
+  margin-bottom: 24px;
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+}
+
+.FarmlandDetailPanel-Container h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #444;
+}
+
+.FarmlandDetailPanel-Container p,
+.FarmlandDetailPanel-Container li {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.FarmlandDetailPanel-Container blockquote {
+  font-style: italic;
+  color: #777;
+  padding-left: 16px;
+  border-left: 4px solid #ccc;
+  margin: 12px 0;
+}
+.FarmlandDetailPanel-Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.FarmlandDetailPanel-Container {
+  position: absolute;
+  background: #ffffff;
+  width: 90%;
+  max-width: 1100px;
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+  cursor: move;
+}
+
+.FarmlandDetailPanel-Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.FarmlandDetailPanel-Buttons {
+  display: flex;
+  gap: 1rem;
+  margin-right: 3rem;
+}
+
+.FarmlandDetailPanel-Button {
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.FarmlandDetailPanel-CloseButton {
+  background-color: #ef4444;
+  color: white;
+  padding: 0.5rem 0.9rem;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.FarmlandDetailPanel-Content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+
+.FarmlandDetailPanel-Section {
+  flex: 1 1 48%;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.6rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+/* === Enhanced layout for full BE fields === */
+.FDP { max-width: 980px; }
+.FDP-imageWrap { width: 100%; margin: 6px 0 12px; }
+.FDP-image { width: 100%; height: auto; border-radius: 12px; object-fit: cover; }
+
+.FDP-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 16px;
+  margin-top: 8px;
+}
+
+.FDP-col-span-2 { grid-column: 1 / -1; }
+
+.FDP-field {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 8px;
+  align-items: center;
+}
+
+.FDP-label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.FDP-value {
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: #222;
+  word-break: break-all;
+}
+
+.FDP-quote {
+  margin: 6px 0 0;
+  padding: 10px 12px;
+  background: #fff7ec;
+  border: 1px solid #ffe2b8;
+  border-radius: 10px;
+  color: #5a3d00;
+}
+
+.FDP-list {
+  margin: 6px 0 0 0;
+  padding-left: 16px;
+}
+@media (max-width: 860px) {
+  .FDP-grid { grid-template-columns: 1fr; }
+  .FDP-field { grid-template-columns: 90px 1fr; }
+}

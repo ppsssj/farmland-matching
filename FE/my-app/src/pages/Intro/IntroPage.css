@@ -1,0 +1,322 @@
+.IntroContainer {
+  padding: 0;
+  margin: 0;
+  background-color: #f4efe9;
+}
+
+.IntroForeground {
+  position: relative;
+  z-index: 1; /* 별 배경보다 위로 */
+}
+
+.IntroHeader {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1vw;
+  padding: 2vw 5vw 1vw 5vw;
+}
+
+.IntroLogoImage {
+  width: 3vw;
+  height: auto;
+  min-width: 30px;
+}
+
+.IntroTitle {
+  font-size: 1.4vw;
+  font-weight: bold;
+  color: #202229;
+  font-family: "SUIT", sans-serif;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .IntroHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .IntroTitle {
+    font-size: 4vw;
+  }
+
+  .IntroLogoImage {
+    width: 6vw;
+  }
+}
+
+
+.IntroContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4vw;
+  padding: 5% 5%;
+
+  flex-wrap: wrap; /* 화면 작을 때 반응형 대응 */
+}
+
+.Intro-Text {
+  width: 50%;              /* 좌측 텍스트 영역 */
+  min-width: 280px;
+}
+
+.Intro-Video {
+  width: 40%;              /* 우측 영상 영역 */
+  min-width: 240px;
+  max-width: 500px;
+  aspect-ratio: 16 / 9;
+  border-radius: 1vw;
+  overflow: hidden;
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2.5vw;
+  font-weight: bold;
+}
+
+.blue {
+  color: #c58f4d;
+}
+
+
+.subtext {
+  font-size: 1.1vw;
+  margin-top: 1vw;
+}
+
+.start-button {
+  margin-top: 2vw;
+  padding: 0.7vw 1.6vw;
+  font-size: 1vw;
+  background-color: #ecaf64;
+  color: white;
+  border: none;
+  border-radius: 0.5vw;
+  cursor: pointer;
+}
+
+.start-button:hover {
+  background-color: #c58f4d;
+}
+
+.KeyFeatures1 {
+  padding: 2.5vw;
+  background-color: #f9fafb;
+  border-radius: 0.8vw;
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+  max-width: 50vw;
+  margin: 0 auto;
+}
+
+.FeatureHeader {
+  color: #4b5563;
+  font-size: 0.9vw;
+  font-weight: 500;
+  margin-bottom: 0.4vw;
+}
+
+.FeatureTitle {
+  font-size: 1.4vw;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5vw;
+  border-bottom: 0.15vw solid #ac722b;
+  padding-bottom: 0.5vw;
+}
+
+.FeatureList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2vw;
+}
+
+.FeatureItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.FeatureContent {
+  font-size: 1vw;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.3vw;
+}
+
+.FeatureExplain {
+  font-size: 0.8vw;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.FeatureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5vw;
+  margin-top: 1.5vw;
+}
+
+.FeatureCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.2vw;
+  background-color: white;
+  border-radius: 0.8vw;
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.FeatureCard:hover {
+  transform: translateY(-0.3vw);
+  box-shadow: 0 0.6vw 1.5vw rgba(0, 0, 0, 0.12);
+}
+
+.FeatureIcon {
+  width: 3vw;
+  height: 3vw;
+  margin-bottom: 0.6vw;
+}
+
+.FeatureSectionWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 3vw;
+  padding: 4vw 2vw;
+  flex-wrap: wrap;
+}
+
+.KeyFeaturesBox {
+  padding: 2vw;
+  background-color: #efd4b3;
+  border-radius: 0.8vw;
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.08);
+  max-width: 35vw;
+  flex: 1;
+  min-width: 20vw;
+}
+
+.typing {
+  font-size: 1.1vw; /* 반응형 글씨 크기 */
+  font-weight: 700;
+  color: #444;
+  margin-top: 1.2vw;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  text-align: center;
+}
+
+.typing::after {
+  content: "|";
+  animation: blink 1s step-start infinite;
+  margin-left: 4px;
+  font-weight: bold;
+  color: #3c67ff;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.particle-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* 뒤에 깔리게 */
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  width: 4.5px; 
+  height: 4.5px;
+  background-color: rgba(60, 103, 255, 0.4); /* 파란색 + 투명도 ↑ */
+  border-radius: 50%;
+  animation-name: float;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.2);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+.emoji-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.floating-emoji {
+  position: absolute;
+  animation-name: emoji-drift;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes emoji-drift {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(10px, -10px) rotate(3deg);
+  }
+  50% {
+    transform: translate(5px, 10px) rotate(-2deg);
+  }
+  75% {
+    transform: translate(-10px, -5px) rotate(2deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+
+.bgm-controller {
+  position: fixed;
+  bottom: 2vh;
+  right: 2vw;
+  background-color: #fff8e6;
+  color: #4b3c2e;
+  padding: 0.6vw 1vw;
+  border-radius: 1vw;
+  font-size: 0.9vw;
+  box-shadow: 0 0.3vw 1vw rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 9999;
+  transition: background-color 0.2s;
+}
+
+.bgm-controller:hover {
+  background-color: #f3e6cd;
+}
+
+.SectionBlock {
+  min-height: 100vh;
+  padding: 6vw 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,7 @@
+.useMakerManager-emoji-overlay {
+  font-size: 1.4rem;
+  background: none;
+  border: none;
+  pointer-events: none;
+  transform: translateX(-50%);
+}

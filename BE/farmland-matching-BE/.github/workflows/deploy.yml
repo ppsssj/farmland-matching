@@ -1,0 +1,155 @@
+name: BE CI/CD to EC2 (Docker + GHCR + Secrets)
+
+on:
+  push:
+    branches: [ "main", "develop" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      APP_DIR: /opt/hackathon
+      IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/farmland-matching-be
+      TAG_LATEST: latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify files exist (before upload)
+        run: |
+          echo "PWD: $(pwd)"; ls -al
+          ls -al infra || true
+          test -f ./infra/docker-compose.yml || { echo "::error::missing ./infra/docker-compose.yml"; exit 1; }
+          test -f ./infra/nginx/app.conf     || { echo "::error::missing ./infra/nginx/app.conf"; exit 1; }
+
+      - name: Prepare dirs on EC2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            sudo mkdir -p /opt/hackathon/nginx
+            sudo chown -R $USER:$USER /opt/hackathon
+
+      - name: Login to GHCR (push)
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build & Push image
+        run: |
+          docker build -t $IMAGE_NAME:$TAG_LATEST .
+          docker push $IMAGE_NAME:$TAG_LATEST
+
+      - name: Show files
+        run: |
+          pwd
+          ls -al
+          ls -al infra/nginx || true
+
+  # docker-compose.yml 업로드
+      - name: Upload compose to EC2
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          source: "./infra/docker-compose.yml"       # ← 경로 수정
+          target: "/opt/hackathon/"
+          overwrite: true
+
+      - name: Upload nginx conf to EC2
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          source: "./infra/nginx/app.conf"           # ← 그대로 infra 경로
+          target: "/opt/hackathon/nginx/"
+          overwrite: true
+
+      # 원격 배포: .env 생성(Secrets 주입) -> compose pull/up
+      - name: Remote deploy on EC2 (safe)
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          script_stop: true
+          command_timeout: 30m
+          # 필요 시 APP_DIR을 바꾸고 싶으면 repo secrets에 APP_DIR=/opt/hackathon 같은 식으로 넣고 envs에 추가
+          envs: APP_DIR
+          script: |
+            bash -lc '
+              set -Eeuo pipefail
+              set -x
+              trap "echo [ERR] line:$LINENO exit:$?" ERR
+
+              APP_DIR="${APP_DIR:-/opt/hackathon}"
+
+              sudo mkdir -p "$APP_DIR/nginx" "$APP_DIR/fe-build"
+              sudo chown -R "$USER:$USER" "$APP_DIR"
+              cd "$APP_DIR"
+
+              # ===== .env 작성 (컨텍스트패스 라인 넣지 않음) =====
+              : > .env
+              echo TZ=Asia/Seoul >> .env
+              echo COMPOSE_PROJECT_NAME=hackathon >> .env
+              echo GHCR_OWNER=${{ secrets.GHCR_USERNAME }} >> .env
+
+              echo POSTGRES_DB=${{ secrets.POSTGRES_DB }} >> .env
+              echo POSTGRES_USER=${{ secrets.POSTGRES_USER }} >> .env
+              echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
+
+              echo APP_PORT=8080 >> .env
+              echo SPRING_PROFILES_ACTIVE=prod >> .env
+              echo SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/${{ secrets.POSTGRES_DB }} >> .env
+              echo SPRING_DATASOURCE_USERNAME=${{ secrets.POSTGRES_USER }} >> .env
+              echo SPRING_DATASOURCE_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
+              echo JAVA_OPTS="-Xms256m -Xmx512m" >> .env
+
+              echo SUPABASE_URL=${{ secrets.SUPABASE_URL }} >> .env
+              echo SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }} >> .env
+              echo SUPABASE_BUCKET=${{ secrets.SUPABASE_BUCKET }} >> .env
+            
+              echo AI_BASE_URL=${{ secrets.AI_BASE_URL }} >> .env
+
+
+              # ===== docker compose 감지 =====
+              if docker compose version >/dev/null 2>&1; then
+                DC="docker compose"
+              elif docker-compose version >/dev/null 2>&1; then
+                DC="docker-compose"
+              else
+                echo "[ERROR] docker compose not installed"; exit 3
+              fi
+              echo "[INFO] Using: $DC"
+
+              docker network create app-net 2>/dev/null || true
+
+              # ===== GHCR 로그인 (private pull 필요 시) =====
+              if [ -n "${{ secrets.GHCR_USERNAME }}" ] && [ -n "${{ secrets.GHCR_READ_TOKEN }}" ]; then
+                echo "${{ secrets.GHCR_READ_TOKEN }}" | docker login ghcr.io -u "${{ secrets.GHCR_USERNAME }}" --password-stdin
+              fi
+
+              # ===== nginx 이름/포트 충돌 사전 정리 (단순/안전) =====
+              set +e
+              docker inspect hackathon-nginx >/dev/null 2>&1 && docker rm -f hackathon-nginx || true
+              set -e
+
+              # ===== compose 파싱 확인 + 배포 =====
+              $DC config --no-interpolate
+              $DC pull
+              $DC up -d
+
+              $DC ps
+              docker logs --tail=120 hackathon-app || true
+            '

@@ -1,0 +1,145 @@
+/* 전체 레이아웃 */
+.FarmlandDetailView-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* 더 촘촘하게 */
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: 0.92rem; /* 전체 폰트 살짝 축소 */
+  color: #111827;
+}
+
+/* 상단 바 */
+.FarmlandDetailView-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  padding: 0.4rem 0.6rem; /* 축소 */
+  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.FDV-title {
+  font-weight: 600;
+}
+.FDV-sub {
+  font-weight: 400;
+  color: #6b7280;
+  margin-left: 0.25rem;
+}
+.FDV-back,
+.FDV-close {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  padding: 0.3rem 0.5rem; /* 축소 */
+  border-radius: 0.45rem;
+  cursor: pointer;
+  font-size: 0.88rem;
+}
+
+/* 본문 그리드 */
+.FarmlandDetailView-grid {
+  flex: 1 1 auto;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    minmax(200px, 1fr)
+  ); /* 🔹 240 → 200으로 축소 */
+  gap: 0.6rem; /* 🔹 간격도 살짝 축소 */
+  padding: 0.5rem;
+  background: #fafafa;
+}
+
+/* 섹션 카드 */
+.FarmlandDetailView-section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.6rem;
+  padding: 0.7rem; /* 축소 */
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.FarmlandDetailView-section h3 {
+  margin: 0 0 0.1rem;
+  font-size: 1rem;
+}
+.FarmlandDetailView-section h4 {
+  margin: 0.35rem 0 0.1rem;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+/* 읽기 전용 항목들 */
+.FDV-info-row {
+  display: grid;
+  grid-template-columns: 110px 1fr; /* 라벨 더 좁게 */
+  align-items: start;
+  gap: 0.4rem;
+}
+.FDV-info-label {
+  color: #6b7280;
+  font-size: 0.86rem;
+  white-space: nowrap;
+}
+.FDV-info-value {
+  font-size: 0.92rem;
+  line-height: 1.35;
+  word-break: keep-all;
+}
+
+.FDV-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.FDV-list {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+.FDV-list li {
+  margin: 0.05rem 0;
+}
+
+.FDV-note {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.6rem;
+  line-height: 1.4;
+  font-size: 0.92rem;
+}
+
+/* 버튼 */
+.FarmlandDetailView-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+}
+.FarmlandDetailView-close-btn {
+  background: #fff;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* 좁은 화면 대응 */
+@media (max-width: 1280px) {
+  .FarmlandDetailView-grid {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+  }
+}
+@media (max-width: 880px) {
+  .FarmlandDetailView-grid {
+    grid-template-columns: 1fr;
+  }
+}

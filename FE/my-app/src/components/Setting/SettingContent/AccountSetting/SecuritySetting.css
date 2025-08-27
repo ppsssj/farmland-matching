@@ -1,0 +1,140 @@
+.Securitysettings-container {
+  width: 100%;
+  margin: 2% auto;
+  padding: 2%;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.SecuritySettings-mailtell {
+  display: flex;
+  gap: 1rem; /* 메일과 전화번호 간격 */
+  align-items: flex-start;
+}
+
+.Securitysettings-section {
+  margin-bottom: 1.5rem;
+}
+
+.Securitysettings-section.half-width {
+  flex: 1;
+}
+
+.Securitysettings-label {
+  display: block;
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+}
+
+.Securitysettings-input {
+  width: 100%;
+  font-size: 0.85rem;
+  padding: 0.8rem 0.9rem;
+  border: 1.4px solid #ccc;
+  border-radius: 0.4rem;
+  box-sizing: border-box;
+  margin-bottom: 0.75rem;
+  transition: border-color 0.2s;
+}
+
+.Securitysettings-input:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+.Securitysettings-button-group {
+  display: flex;
+  gap: 0.5rem; /* 버튼 간 간격 */
+  margin-bottom: 0.5rem;
+}
+
+.Securitysettings-btn {
+  flex: 1; /* 버튼 폭 균등 분배 */
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+
+.Securitysettings-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.Securitysettings-error-text {
+  color: rgb(33, 156, 33);
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: -0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+/* 비밀번호 변경 영역 */
+.Securitysettings-password-row {
+  display: flex;
+  gap: 1%;
+  margin-bottom: 0.5rem;
+}
+
+.Securitysettings-input.half {
+  flex: 1;
+}
+
+.Securitysettings-changebtn {
+  padding: 0.01rem 1rem;
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+  box-sizing: border-box;
+  margin-bottom: 0.75rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.Securitysettings-changebtn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* 비밀번호 일치/불일치 표시 */
+.Securitysettings-password-match {
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: -0.3rem;
+}
+
+.Securitysettings-password-match.success {
+  color: #2563eb;
+}
+
+.Securitysettings-password-match.error {
+  color: #e02424;
+}
+
+/* 최근 로그인 기록 */
+.Securitysettings-login-record {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.Securitysettings-login-record table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #444;
+  font-size: 0.85rem;
+}
+
+.Securitysettings-login-record td {
+  padding: 0.3rem 0.5rem;
+  vertical-align: middle;
+  font-weight: 500;
+  opacity: 0.7;
+}

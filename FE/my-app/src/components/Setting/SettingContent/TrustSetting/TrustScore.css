@@ -1,0 +1,142 @@
+.TrustScore-container {
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 2%;
+  box-sizing: border-box;
+}
+
+.TrustScore-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.TrustScore-bar-wrapper {
+  position: relative;
+  margin-bottom: 8rem;
+}
+
+.TrustScore-bar-background {
+  width: 100%;
+  height: 0.75rem;
+  background-color: #e0e0e0;
+  border-radius: 0.4rem;
+  position: relative;
+}
+
+.TrustScore-bar-foreground {
+  height: 100%;
+  background-color: #3b82f6;
+  border-radius: 0.4rem 0 0 0.4rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.TrustScore-marker {
+  position: absolute;
+  top: -2rem;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.TrustScore-marker-name {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.TrustScore-score-display {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  color: #3b82f6;
+  text-align: right;
+}
+
+.TrustScore-score-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.25rem;
+}
+
+.TrustScore-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.TrustScore-cell {
+  flex: 1;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.TrustScore-cell.label {
+  flex: 1.2;
+  text-align: left;
+  font-weight: bold;
+}
+
+.TrustScore-cell.category {
+  font-weight: 600;
+}
+
+.TrustScore-cell.score.user {
+  color: #3b82f6;
+}
+
+.TrustScore-cell.score.avg {
+  color: #888;
+}
+
+.TrustScore-cell.user-name {
+  color: #3b82f6;
+}
+
+.TrustScore-cell.avg {
+  color: #666;
+}
+.TrustScore-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.2rem;
+  font-size: 0.95rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.TrustScore-table thead {
+  background: #f3f4f6;
+}
+
+.TrustScore-table th,
+.TrustScore-table td {
+  padding: 0.75rem 0.9rem;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.TrustScore-table th {
+  font-weight: 700;
+}
+
+.TrustScore-table td.label {
+  text-align: left;
+  font-weight: 600;
+}
+
+.TrustScore-table .icon {
+  margin-right: 0.4rem;
+}
+
+.TrustScore-table td.score {
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.TrustScore-table tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}

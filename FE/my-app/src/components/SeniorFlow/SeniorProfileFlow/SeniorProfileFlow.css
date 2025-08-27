@@ -1,0 +1,176 @@
+/* 전체 레이아웃 */
+.SeniorProfile-Wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f9f6f1;
+  font-family: 'Noto Sans KR', sans-serif;
+  position: relative;
+  gap: 40px;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* 좌측 상단 홈 버튼 */
+.SeniorProfile-BackButton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #eeeeee;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.SeniorProfile-BackButton:hover {
+  background-color: #ddd;
+}
+
+/* 오른쪽 입력 영역 */
+.SeniorProfile-FlowContainer {
+  flex: 1;
+  padding: 2rem 3rem;
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 입력 단계 컴포넌트 */
+.SeniorProfile-Step {
+  margin-top: 20px;
+  animation: SeniorProfile-slideIn 0.3s ease-in-out;
+}
+
+/* 타이틀 */
+.SeniorProfile-StepTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+/* 입력 필드 */
+.SeniorProfile-Input {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.SeniorProfile-Input:focus {
+  border-color: #5a914e;
+  outline: none;
+  background-color: #f7fff4;
+}
+
+.SeniorProfile-Input--error {
+  border-color: #d9534f;
+  background-color: #fff0f0;
+}
+
+/* 버튼 영역 */
+.SeniorProfile-Buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.SeniorProfile-Buttons button {
+  font-size: 17px;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.SeniorProfile-Next {
+  background-color: #5a914e;
+  color: white;
+}
+
+.SeniorProfile-Next:disabled {
+  background-color: #b6c6b0;
+  cursor: not-allowed;
+}
+
+.SeniorProfile-Buttons button:not(.SeniorProfile-Next) {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* 안내 텍스트 */
+.SeniorProfile-Help {
+  font-size: 14px;
+  color: #666;
+  margin-top: 6px;
+}
+
+.SeniorProfile-Error {
+  color: #d9534f;
+  font-size: 15px;
+  margin-top: 6px;
+}
+
+/* 진행 바 */
+.SeniorProfile-ProgressBar {
+  width: 100%;
+  height: 10px;
+  background-color: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.SeniorProfile-ProgressFill {
+  height: 100%;
+  background-color: #56ba7c;
+  transition: width 0.3s ease;
+}
+
+.SeniorProfile-StepText {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+/* 요약 정보 */
+.SeniorProfile-Summary {
+  width: 280px;
+  padding: 2rem;
+  background-color: #fff;
+  border-right: 1px solid #eee;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.SeniorProfile-Summary h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.SeniorProfile-Summary ul {
+  list-style: none;
+  padding: 0;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* 애니메이션 */
+@keyframes SeniorProfile-slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
