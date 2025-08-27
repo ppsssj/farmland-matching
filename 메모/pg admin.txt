@@ -1,4 +1,0 @@
-pg admin
-
-servers 
-password:mite
