@@ -11,6 +11,26 @@
 
 ---
 
+## 💡 문제 정의 및 배경 (해커톤 주제 → 문제 재정의)
+
+- **해커톤 공식 주제:** *AI로 학교 주변 상권 살리기*
+- 주제를 분석하는 과정에서, 우리 학교 주변의 지역적 특성으로 **농지가 많다**는 점에 주목했다.
+
+### 왜 ‘신뢰 기반 농지 매칭’으로 풀었는가
+가족 경험에서 출발한 문제 인식이 있었다.  
+할아버지는 염전을 운영하시는데, 예전에 하셨던 말씀이 기억에 남아 있었다.
+
+> “평생을 바친 염전을 아무에게나 넘겨주고 싶지 않다.”
+
+이 인사이트를 바탕으로, 원래 주제를 다음과 같이 **AI로 풀 수 있는 문제**로 재정의했다.
+
+- **핵심 문제:** 농지 보유자는 **신뢰**와 **정보 비대칭** 때문에 임대/양도에 소극적임
+- **해결 방향:** **AI 기반 신뢰도 산출 + 적합도 매칭**으로 신뢰 가능한 청년과 농지 보유자를 연결
+- **지역 상권 기대효과:** 청년 농업인의 유입과 활동이 늘면 **인구 유입이 발생**하고, 그 결과 **주변 상권 활성화**로 이어질 수 있음
+- **1차 산업 붕괴 방지 관점:** 농업 인력의 고령화가 심화되는 상황에서, 다수의 농업인이 은퇴 시기에 진입하고 있어 **생산 기반의 단절(1차 산업 붕괴) 리스크**가 커지고 있다. 이에 청년 인력의 유입과 안정적 정착을 촉진하는 매칭 구조가 필요하다.
+
+---
+
 ## ✨ 주요 기능
 - **신뢰도 분석**  
   - 청년의 자격증, 교육 이수, 장비 보유, 재배/임대 이력, 추천인 정보를 기반으로 **신뢰 점수 산출**  
@@ -60,28 +80,28 @@
 
 ---
 
-## 👥 Team & My Role
+## 👥 팀 구성 및 내 역할
 
-- **Team size:** 4 members  
-- **My role:** **PM / Product Design / Front-End**
+- **팀 규모:** 4인  
+- **내 역할:** **PM / 프로덕트 디자인(UI/UX) / 프론트엔드**
 
-### ✅ What I did (PM · Design · FE)
+### ✅ 담당 업무 (PM · Design · FE)
 
 **PM**
-- Defined problem scope and MVP, set feature priorities
-- Managed 4-week milestones and issue tracking across the team
-- Built the demo scenario and presentation storyline
+- 문제 정의 및 MVP 범위 설정, 기능 우선순위 수립
+- 4주 일정(마일스톤) 운영 및 이슈 트래킹/리스크 관리
+- 데모 시나리오 설계 및 발표 스토리라인 구성
 
-**Design (UI/UX)**
-- Designed user flows for **Senior (land owner)** and **Youth (tenant/buyer)**
-- Produced **Figma** wireframes and high-fidelity UI screens
-- Organized basic UI consistency (components, spacing, readability, large-button UX)
+**디자인(UI/UX)**
+- **어르신(농지 보유자)** / **청년(임차·구매 희망자)** 사용자 플로우 설계
+- Figma 기반 와이어프레임 및 고충실도(UI) 시안 제작
+- 큰 버튼/가독성 중심 등 사용성 기준으로 UI 일관성(컴포넌트, 간격, 레이아웃) 정리
 
-**Front-End**
-- Implemented key pages with **React**
-- Integrated **Kakao Map API** for map-based browsing and selection
-- Built **responsive panel layout** (Left/Right/Bottom/Overlay) and **AOS** interactions
-- Connected to backend **REST APIs** for core flows (explore/detail/register) and supported integration testing
+**프론트엔드**
+- React 기반 핵심 페이지 구현
+- Kakao Map API 연동(지도 기반 탐색/선택/상세 확인)
+- 반응형 패널 레이아웃(Left/Right/Bottom/Overlay) 및 AOS 인터랙션 적용
+- 백엔드 REST API 연동(탐색/상세/등록 핵심 플로우) 및 통합 테스트/버그 수정 지원
 
 ---
 
