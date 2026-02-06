@@ -60,6 +60,31 @@
 
 ---
 
+## 👥 Team & My Role
+
+- **Team size:** 4 members  
+- **My role:** **PM / Product Design / Front-End**
+
+### ✅ What I did (PM · Design · FE)
+
+**PM**
+- Defined problem scope and MVP, set feature priorities
+- Managed 4-week milestones and issue tracking across the team
+- Built the demo scenario and presentation storyline
+
+**Design (UI/UX)**
+- Designed user flows for **Senior (land owner)** and **Youth (tenant/buyer)**
+- Produced **Figma** wireframes and high-fidelity UI screens
+- Organized basic UI consistency (components, spacing, readability, large-button UX)
+
+**Front-End**
+- Implemented key pages with **React**
+- Integrated **Kakao Map API** for map-based browsing and selection
+- Built **responsive panel layout** (Left/Right/Bottom/Overlay) and **AOS** interactions
+- Connected to backend **REST APIs** for core flows (explore/detail/register) and supported integration testing
+
+---
+
 ## 🚀 실행 방법
 ```bash
 # 프론트엔드 실행
