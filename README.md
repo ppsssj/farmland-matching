@@ -105,6 +105,17 @@
 
 ---
 
+## 🗂️ 데이터 구조 & API 명세
+
+청년/어르신 사용자 데이터 구조와 입력·출력 항목은 아래 Notion 문서에서 확인 가능합니다:  
+[데이터 구조 Notion 바로가기]((https://scented-gemini-52f.notion.site/24538986b40280bdb689e4ef3acc2496?source=copy_link))
+
+플랫폼에서 사용하는 API 명세서는 아래 Notion 문서에서 확인 가능합니다:  
+[API 명세서 Notion 바로가기](https://scented-gemini-52f.notion.site/API-1-27938986b4028034a592ee5e2dea0d51?source=copy_link)
+
+
+---
+
 ## 🚀 실행 방법
 ```bash
 # 프론트엔드 실행
