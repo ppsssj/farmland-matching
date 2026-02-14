@@ -71,9 +71,9 @@
 
 ## 📅 프로젝트 기간
 - **2025.07.28 ~ 2025.08.25 (약 4주)**  
-  - 07.28: 주제 확정 — *“밭 볼텼유? 신뢰 기반 농지 매칭 플랫폼”*  
+  - 07.28: 주제 확정 — *“밭 볼텼유? 신뢰 기반 농지 매칭 플랫폼”*   https://scented-gemini-52f.notion.site/23d38986b40280acb8c4dc447d47eaa2?source=copy_link
   - 07.29~07.31: 피그마 디자인 및 UI 기획     Figma url : https://www.figma.com/design/y0GsKpGun5i5Ci2gs1R6Gt/%EB%86%8D%EC%9E%A5?node-id=0-1&p=f&t=slA6kiG5YgirmWph-0
-  - 08.01~08.13: 프론트엔드 / 백엔드 / AI 개발  
+  - 08.01~08.13: 프론트엔드 / 백엔드 / AI 개발   https://scented-gemini-52f.notion.site/23d38986b4028040b3e4dd058b444be3?source=copy_link
   - 08.14~08.20: 시스템 연동 및 기능 통합  
   - 08.21~08.23: 배포(AWS EC2 + Docker) 및 버그 수정  
   - 08.24~08.25: 최종 발표 & 데모 시연
