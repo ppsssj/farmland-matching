@@ -168,10 +168,10 @@
 
 | Member | GitHub | Role | Main Responsibilities |
 |---|---|---|---|
-| psj | [@ppsssj](https://github.com/ppsssj) | PM / Design / Frontend | 프로젝트 기획, MVP 범위 설정, UI/UX 설계, 주요 프론트엔드 구현 |
-| seokhyeon2356 | [@seokhyeon2356](https://github.com/seokhyeon2356) | Backend | 백엔드 API 설계 및 구현, 서버 로직 개발, 데이터 처리 구조 구성 |
-| tyujin | [@tyujin](https://github.com/tyujin) | Frontend / Design | 프론트엔드 화면 구현, UI 디자인, 사용자 인터페이스 개선 |
-| w4vyx | [@w4vyx](https://github.com/w4vyx) | AI | AI 기반 매칭 로직 설계, 클러스터링 및 분석 모델 구현 |
+| 박성진 | [@ppsssj](https://github.com/ppsssj) | PM / Design / Frontend | 프로젝트 기획, MVP 범위 설정, UI/UX 설계, 주요 프론트엔드 구현 |
+| 이석현 | [@seokhyeon2356](https://github.com/seokhyeon2356) | Backend | 백엔드 API 설계 및 구현, 서버 로직 개발, 데이터 처리 구조 구성 |
+| 탁유진 | [@tyujin](https://github.com/tyujin) | Frontend / Design | 프론트엔드 화면 구현, UI 디자인, 사용자 인터페이스 개선 |
+| 서지현 | [@w4vyx](https://github.com/w4vyx) | AI | AI 기반 매칭 로직 설계, 클러스터링 및 분석 모델 구현 |
 
 ---
 
